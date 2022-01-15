@@ -35,7 +35,7 @@ let data = new function () {                                    //Создаем
 const util = new function () {
     this.ajax = (params, callback) => {
         let url = "";
-        if (params.path !== undefined) { // Для удаления
+        if (params.path !== undefined) { 
             url = params.path;
             delete params.path;
         }
@@ -54,7 +54,7 @@ const util = new function () {
 }
 
 const student = new function () {
-    this.submit = () => {   // нажатие кнопки сохранить
+    this.submit = () => {   
         const st = {
             name: util.id("name").value,
             group: util.id("group").value,
@@ -69,7 +69,7 @@ const student = new function () {
         util.id("edit").style.display = "none"
     }
 
-    this.remove = () => {  // удаление студента
+    this.remove = () => {  
         data.delete(activeStudent);
         activeStudent = null;
         this.render()
@@ -80,15 +80,15 @@ const init = () => {
     data.init(() => {
         this.render();
     });
-    util.q("button.add").forEach(el => {  // Кнопка добавления
+    util.q("button.add").forEach(el => {  
         util.listen(el, "click", add);
     });
-    util.q(".btn-close, .close").forEach(el => {  // Крестики и отмена
+    util.q(".btn-close, .close").forEach(el => {  
         util.listen(el, "click", () => {
             util.id(el.dataset["id"]).style.display = "none";
         });
     });
-    util.q(".submit").forEach(el => {  // Кнопки сохранить и удалить в формах, цикл потому что обе кнопки submit
+    util.q(".submit").forEach(el => {  
         util.listen(el, "click", () => {
             this[el.dataset["func"]]();
         });
@@ -105,7 +105,7 @@ const add = () => {
 const edit = (el) => {
     util.q("#edit .title")[0].innerHTML = "<center>Изменить данные:</center>";
     util.q("#edit form")[0].reset();
-    const st = data.get(el.dataset["id"]); // Забирает кнопку изменить
+    const st = data.get(el.dataset["id"]); 
     for(let k in st) {
         util.id(k).value = st[k];
     }
@@ -115,23 +115,23 @@ const edit = (el) => {
 let activeStudent = null;
 const rm = (el) => {
     util.id("remove").style.display = "block";
-    activeStudent = el.dataset["id"]; // dataset получает значение пользовательских атрибутов
+    activeStudent = el.dataset["id"]; 
 };
 
-const addListener = () => {  // События для кнопок изменить и удалить в таблице
-    util.q("button.edit").forEach(el => {  // Метод forEach() выполняет цикл по событиям.
-        util.listen(el, "click", () => edit(el)); // Показывает форму изменения
+const addListener = () => {  
+    util.q("button.edit").forEach(el => {  
+        util.listen(el, "click", () => edit(el)); 
     });
-    util.q("button.rm").forEach(el => {    // Метод forEach() выполняет цикл по событиям.
-        util.listen(el, "click", () => rm(el)); // Показывает форму удаления
+    util.q("button.rm").forEach(el => {    
+        util.listen(el, "click", () => rm(el)); 
     });
 };
 
 this.render = () => {
     util.id("table")
-        .innerHTML = data // Отображает студентов в таблице
+        .innerHTML = data 
         .getAll()
-        .map(el => util.parse(tpl, el)).join("");  // Взвращаем массив строк с табличкой и join превращает в строку
+        .map(el => util.parse(tpl, el)).join("");  
     addListener();
 };
 
