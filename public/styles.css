@@ -1,0 +1,119 @@
+table, td {
+    table-layout: fixed;
+    width: 100%;
+    text-align: center; /* выравнивание текста */
+    padding: 6px; /* отступ между краями элемента и его содержимым */
+    border: 2px outset black; /* рамка вокруг элемента */
+    border-collapse: collapse; /* устанавливает, как отображать границы вокруг ячеек таблицы */
+    margin: 0px auto; /* устанавливает величину отступа от каждого края элемента */
+}
+
+
+th {
+    height: 50px;
+    text-align: center; /* выравнивание текста */
+    border: 2px outset black; /* рамка вокруг элемента */
+    border-collapse: collapse; /* устанавливает, как отображать границы вокруг ячеек таблицы */
+}
+input {
+    width: 80%;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.select {
+    width: 84%;
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.change {
+    width: 300px;
+    border: 1px outset black;
+    display: table; /* свойство, которое определяет, как элемент должен быть показан в документе */
+    padding: 13px; /* отступ между краями элемента и его содержимым */
+    margin: 10px 10px; /* величина отступа от каждого края элемента */
+}
+
+.delete {
+    width: 88%;
+    border: 1px outset black;
+    display: table; /* свойство, которое определяет, как элемент должен быть показан в документе */
+    padding: 20px; /* отступ между краями элемента и его содержимым */
+    margin: 10px 10px; /* величина отступа от каждого края элемента */
+}
+
+.add {                   /* Кнопка добавить */
+    width: 8%;
+    background: green;
+    margin: 0 5px;
+    padding: 7px 25px;
+    border: 0 solid black;
+    cursor: pointer;
+}
+
+.edit {                  /* Кнопка изменить */
+    width: 43%;
+    background: blue;
+    margin: 0 5px;
+    padding: 6px 25px;
+    border: 0 solid black;
+    cursor: pointer;
+}
+
+.rm {                     /* Кнопка удалить */
+    width: 43%;
+    background: red;
+    padding: 6px 25px;
+    border: 0 solid black;
+    cursor: pointer;
+}
+
+.close {                /* Кнопки отмены в формах */
+    width: 100px;
+    background: red;
+    margin: auto;
+    padding: 7px 20px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.submit {            /* Кнопки удалить и сохранить в формах */
+    background: green;
+    margin: auto;
+    padding: 7px 20px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.btn-close {            /* Крестик удаления в формах */
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: red;
+    padding: 3px 7px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#edit {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top:50%;
+    left:52%;
+    width: 350px;
+    height: 440px;
+    margin:-200px 0 0 -200px;
+}
+
+#remove {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    top:55%;
+    left:47%;
+    width: 525px;
+    height: 170px;
+    margin:-200px 0 0 -200px;
+}

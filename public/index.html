@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список студентов</title>
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script src="code.js"></script>
+
+</head>
+<body>
+
+<div>
+    <table>
+        <tr><div class="head">
+            <button type="button" class="add">Добавить</button>
+</div>
+        </tr>
+        <thead>
+        <tr>
+            <td style="width: 20px">Id</td>
+            <td>Ф.И.</td>
+            <td style="width: 45%">Группа</td>
+            <td style="width: 55%">Возраст</td>
+            <td style="width: 100%">Редактирование</td>
+        </tr>
+        </thead>
+        <tbody id="table">
+        </tbody>
+    </table>
+</div>
+
+<div id="remove">
+    <div class="delete">
+        <div>
+            <h4 align="center">Вы действительно хотите удалить студента?</h4>
+            <button type="button" class="btn-close" data-id="remove">х</button>
+        </div>
+        <div>
+            <button style="margin-right: 260px;" type="button" class="submit" data-func="remove">Удалить</button>
+            <button type="button" class="close" data-id="remove">Отмена</button>
+        </div>
+    </div>
+</div>
+
+<div id="edit">
+    <div class=change>
+        <div>
+            <h4 class="title"></h4>
+            <button type="button" class="btn-close" data-id="edit">х</button>
+        </div>
+        <form>
+            <input type="hidden" id="Id" value="-1">
+            <div>
+                <label for="name"></label>
+                <input type="tel" id="name" placeholder="Имя Фамилия">
+            </div>
+            <div>
+                <label for="group"></label>
+                <input type="tel" id="group" placeholder="Группа">
+            </div>
+            <div>
+                <label for="age"></label>
+                <input type="tel" id="age" placeholder="Возраст">
+            </div>
+            <div>
+                <button type="button" class="submit" data-func="submit">Сохранить</button>
+                <button style="margin: auto" type="button" class="close" data-id="edit">Отмена</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
